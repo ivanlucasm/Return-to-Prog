@@ -16,14 +16,17 @@
 
 </head>
 <body>
-    <h1>Olá Mundo!</h1>
-    <p>Me livrei da maldição</p>
-
     <script>
         
         var nome = prompt('Qual é o seu nome?')
-        alert(nome)
+        var n1 = Number(prompt('Digite um número: '))
+        var n2 = Number(prompt('Digite um número: '))
 
+        var s = n1 + n2 
+
+        document.writeln(`Oi ${nome} sua soma é igual: ${s} <br>`)
+
+        document.write(`Valor em real de ${n1} é ${n1.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}`)
     </script>
 </body>
 </html>
