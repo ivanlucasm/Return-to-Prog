@@ -22,6 +22,21 @@ public class App {
 
         List<Map<String,String>> listaDeFilmes = parser.parse(body);
 
+        for (Map<String,String> filmes : listaDeFilmes) {
+            
+            System.out.println(" \u001b[1m Titulo: \u001b[m" + filmes.get("title"));
+            System.out.println("Poster: " + filmes.get("image"));
+
+           double classificacao = Double.parseDouble(filmes.get("imDbRating"));
+           int numeroEstrelas = (int) classificacao;
+
+            for(int n=1 ; n<= classificacao; n++){
+                System.out.print("⭐ ");
+            
+            }
+           
+            System.out.print("\n");
+        }
 
     }
     
