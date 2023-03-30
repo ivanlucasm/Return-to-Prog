@@ -3,12 +3,14 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.util.List;
+import java.util.Map;
 
 public class App {
     public static void main(String[] args) throws Exception {
         
         
-        String url = "https://imdb-api.com/en/API/Top250Movies/k_ho0n1utv";
+        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
         URI endereco = URI.create(url);
         var client = HttpClient.newHttpClient();
         var request = HttpRequest.newBuilder(endereco).GET().build();
@@ -16,6 +18,11 @@ public class App {
         String body = response.body();
 
         System.out.println(body);
+        var parser = new JsonParse();
+
+        List<Map<String,String>> listaDeFilmes = parser.parse(body);
+
+
     }
     
 }
