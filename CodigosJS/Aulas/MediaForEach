@@ -1,0 +1,22 @@
+const notas = [10, 6.5, 8, 7.5]
+const nomes = ["Ivan", "Lucas", "Medeiros", "Souza"]
+
+let soma = 0
+
+notas.forEach(function (nota) {
+
+soma+=nota
+})
+
+media = soma/notas.length
+
+console.log(media)
+
+nomes.forEach((nome,indice) => {
+    console.log(nome,indice)
+})
+
+function imprimeNome(nome){
+    console.log(nome)
+}
+nomes.forEach(imprimeNome)
